@@ -36,9 +36,9 @@ class ExpenseManagementController extends Controller
         try {
             //validation
             $request->validate([
-                'name' => 'required',
-                'price' => 'required',
-                'description' => 'required',
+                'name' => 'required|max:255',
+                'price' => 'required|numeric|gt:0',
+                'description' => 'required|max:500',
             ]);
 
             $name = $request->get('name');
@@ -79,9 +79,9 @@ class ExpenseManagementController extends Controller
         try{
             //validation
             $request->validate([
-                'name' => 'required',
-                'price' => 'required',
-                'description' => 'required',
+                'name' => 'required|max:255',
+                'price' => 'required|numeric|gt:0',
+                'description' => 'required|max:500',
             ]);
 
             $name = $request->get('name');
